@@ -1,5 +1,5 @@
-inputs: assets/demo/layout_detection
-outputs: outputs/layout_detection
+inputs: trato
+outputs: lm_trato
 tasks:
   layout_detection:
     model: layout_detection_yolo
