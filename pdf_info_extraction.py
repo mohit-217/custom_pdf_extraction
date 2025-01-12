@@ -6,7 +6,7 @@ from magic_pdf.model.doc_analyze_by_custom_model import doc_analyze
 from magic_pdf.config.enums import SupportedPdfParseMethod
 
 # args
-pdf_file_name = "trato\CONTRATO_OBRA.pdf"  # replace with the real pdf path
+pdf_file_name = "trato/CONTRATO_OBRA.pdf"  # replace with the real pdf path
 name_without_suff = pdf_file_name.split(".")[0]
 
 # prepare env
