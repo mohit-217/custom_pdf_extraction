@@ -34,7 +34,7 @@ ds = PymuDocDataset(pdf_bytes)
 #     pipe_result = infer_result.pipe_ocr_mode(image_writer)
 
 # else:
-infer_result = ds.apply(doc_analyze(layout_model="YOLO"), ocr=False)
+infer_result = ds.apply(doc_analyze, ocr=False,layout_model="YOLO")
 
 ## pipeline
 pipe_result = infer_result.pipe_txt_mode(image_writer)
