@@ -26,19 +26,18 @@ pdf_bytes = reader1.read(pdf_file_name)  # read the pdf content
 # proc
 ## Create Dataset Instance
 ds = PymuDocDataset(pdf_bytes)
-
 ## inference
-if ds.classify() == SupportedPdfParseMethod.OCR:
-    infer_result = ds.apply(doc_analyze, ocr=True)
+# if ds.classify() == SupportedPdfParseMethod.OCR:
+#     infer_result = ds.apply(doc_analyze, ocr=True)
 
-    ## pipeline
-    pipe_result = infer_result.pipe_ocr_mode(image_writer)
+#     ## pipeline
+#     pipe_result = infer_result.pipe_ocr_mode(image_writer)
 
-else:
-    infer_result = ds.apply(doc_analyze, ocr=False)
+# else:
+infer_result = ds.apply(doc_analyze(layout_model="YOLO"), ocr=False)
 
-    ## pipeline
-    pipe_result = infer_result.pipe_txt_mode(image_writer)
+## pipeline
+pipe_result = infer_result.pipe_txt_mode(image_writer)
 
 ### draw model result on each page
 infer_result.draw_model(os.path.join(local_md_dir, f"{name_without_suff}_model.pdf"))
