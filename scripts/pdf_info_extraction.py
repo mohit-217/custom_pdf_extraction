@@ -39,6 +39,8 @@ else:
     ## pipeline
     pipe_result = infer_result.pipe_txt_mode(image_writer)
 
+
+print(infer_result)
 ### draw model result on each page
 infer_result.draw_model(os.path.join(local_md_dir, f"{name_without_suff}_model.pdf"))
 
