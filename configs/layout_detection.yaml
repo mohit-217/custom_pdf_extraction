@@ -1,4 +1,4 @@
-inputs: assets/demo/layout_detection
+inputs: trato
 outputs: outputs/layout_detection
 tasks:
   layout_detection:
