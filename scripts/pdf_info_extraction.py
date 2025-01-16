@@ -34,7 +34,7 @@ if ds.classify() == SupportedPdfParseMethod.OCR:
     pipe_result = infer_result.pipe_ocr_mode(image_writer)
 
 else:
-    infer_result = ds.apply(doc_analyze, ocr=False)
+    infer_result = ds.apply(doc_analyze, ocr=False,layout_model=True)
 
     ## pipeline
     pipe_result = infer_result.pipe_txt_mode(image_writer)
